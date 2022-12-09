@@ -75,8 +75,7 @@ $ pnpm run dev
 
 ## Roadmap
 
-- [x] Add this README.
-- [ ] Finish the unicorn project.
+All progress tracking will be made in [ClickUp](https://clickup.com/)
 
 ## Contributing
 
