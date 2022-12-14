@@ -2,7 +2,7 @@
   <!-- <br> -->
   <!-- [Project's Logo] -->
   <br>
-  TCC
+  Bosch Einer
   <br>
 </h1>
 
