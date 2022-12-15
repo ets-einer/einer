@@ -2,14 +2,14 @@
   <!-- <br> -->
   <!-- [Project's Logo] -->
   <br>
-  TCC
+  Bosch Einer
   <br>
 </h1>
 
 <h3 align="center">Main app's Monorepository.</h3>
 
 <h4 align="center">
-  <a href="https://docs-tcc-ets.vercel.app">Project's Documentation</a>
+  <a href="https://docs-einer.vercel.app/pt/bem-vindo">Project's Documentation</a>
 </h4>
 
 <!-- <p align="center">
@@ -40,7 +40,7 @@
 
 ## Getting Started
 
-All important features and requisites are defined [in the documentation website](https://docs-tcc-ets.vercel.app/).
+All important features and requisites are defined [in the documentation website](https://docs-einer.vercel.app/pt/bem-vindo).
 
 ### Prerequisites
 
@@ -55,10 +55,10 @@ Below is an example of how you can instruct your audience on installing and sett
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/tcc-ets/tcc
+$ git clone https://github.com/bosch-einer/einer
 
 # Go into the repository
-$ cd tcc
+$ cd einer
 
 # Install all dependencies
 $ pnpm install
@@ -81,11 +81,11 @@ All progress tracking will be made in [ClickUp](https://clickup.com/)
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-To contribute, you can [open an issue on this repository](https://github.com/tcc-ets/tcc/issues), partipate on [existing pull requests](https://github.com/tcc-ets/tcc) or create your own pull request by forking this repository, commiting and opening a new pull request.
+To contribute, you can [open an issue on this repository](https://github.com/bosch-einer/einer/issues), partipate on [existing pull requests](https://github.com/bosch-einer/einer/pulls) or create your own pull request by forking this repository, commiting and opening a new pull request.
 
-For conventions, it's recommended to name your commits and pull requests using the [commitizen tool](http://commitizen.github.io/cz-cli/) which helps defining good naming for repository changes.
+For conventions, it's recommended to name your commits and pull requests using the convention of [commitizen tool](http://commitizen.github.io/cz-cli/) which helps defining good naming for repository changes.
 
-To commit using [commitizen](http://commitizen.github.io/cz-cli/) you can stage your files using `$ git add` and just run:
+You can commit using [commitizen](http://commitizen.github.io/cz-cli/) you can stage your files using `$ git add` and just run:
 
 ```sh
 $ git cz c
@@ -109,5 +109,5 @@ Inspiration, code snippets, etc.
 
 ---
 
-> [docs-tcc-ets](https://docs-tcc-ets.vercel.app) &nbsp;&middot;&nbsp;
-> GitHub [@tcc-ets](https://github.com/tcc-ets)
+> [docs-einer](https://docs-einer.vercel.app/) &nbsp;&middot;&nbsp;
+> GitHub [@bosch-einer](https://github.com/bosch-einer)
