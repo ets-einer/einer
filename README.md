@@ -2,7 +2,7 @@
   <!-- <br> -->
   <!-- [Project's Logo] -->
   <br>
-  Bosch Einer
+  Einer
   <br>
 </h1>
 
@@ -35,7 +35,7 @@
 ## Key Features
 
 - Borum: A knowledge focused website where users and instructors collaborate together to accumulate information and data throgh questions, guides and lessons.
-- BoschPlanner: Manage, visualize and collaborate on all your projects using only one tool for everyone.
+- Planner: Manage, visualize and collaborate on all your projects using only one tool for everyone.
 - VsDiA Web: Easily develop and build a VsDiA together with your co-workers in one place by using a realtime collaborative tool for mapping processes.
 
 ## Getting Started
@@ -55,7 +55,7 @@ Below is an example of how you can instruct your audience on installing and sett
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/bosch-einer/einer
+$ git clone https://github.com/ets-einer/einer
 
 # Go into the repository
 $ cd einer
@@ -81,7 +81,7 @@ All progress tracking will be made in [ClickUp](https://clickup.com/)
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-To contribute, you can [open an issue on this repository](https://github.com/bosch-einer/einer/issues), partipate on [existing pull requests](https://github.com/bosch-einer/einer/pulls) or create your own pull request by forking this repository, commiting and opening a new pull request.
+To contribute, you can [open an issue on this repository](https://github.com/ets-einer/einer/issues), partipate on [existing pull requests](https://github.com/ets-einer/einer/pulls) or create your own pull request by forking this repository, commiting and opening a new pull request.
 
 For conventions, it's recommended to name your commits and pull requests using the convention of [commitizen tool](http://commitizen.github.io/cz-cli/) which helps defining good naming for repository changes.
 
@@ -110,4 +110,4 @@ Inspiration, code snippets, etc.
 ---
 
 > [docs-einer](https://docs-einer.vercel.app/) &nbsp;&middot;&nbsp;
-> GitHub [@bosch-einer](https://github.com/bosch-einer)
+> GitHub [@ets-einer](https://github.com/ets-einer)
