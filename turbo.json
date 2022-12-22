@@ -11,5 +11,13 @@
     "dev": {
       "cache": false
     }
-  }
+  },
+  "globalEnv": [
+    "AUTH_SERVER_PORT",
+    "AUTH_SERVER_DATABASE_URL",
+    "AUTH_SERVER_REDIS_URL"
+  ],
+  "globalDependencies": [
+    ".env"
+  ]
 }

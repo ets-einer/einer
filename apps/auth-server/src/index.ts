@@ -9,7 +9,7 @@ import { redis } from "@src/lib/redis";
 import { authenticate, authenticateMicroserviceCall } from "./lib/authenticate";
 import type { Request, Response, NextFunction } from "express";
 
-const AUTH_PORT = process.env.PORT || 4001;
+const AUTH_PORT = process.env.AUTH_SERVER_PORT || 4000;
 
 const app = express();
 
