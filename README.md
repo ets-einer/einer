@@ -38,6 +38,24 @@
 - Planner: Manage, visualize and collaborate on all your projects using only one tool for everyone.
 - VsDiA Web: Easily develop and build a VsDiA together with your co-workers in one place by using a realtime collaborative tool for mapping processes.
 
+## Ports
+
+- ### Convention
+  - Vite front-end services: 3000
+  - Back-end services: 4000
+  - Other Services: 5000
+  - Databases: ...
+- ### Actual ports
+  - Vite Auth (Login): 3000
+  - Vite Borum: 3001
+  - Vite Planner: 3002
+  - Vite VSDIA: 3003
+  - Server Borum: 4001
+  - Server Planner: 4002
+  - Server VSDIA: 4003
+  - Authentication Service: 5000
+  - S3 Service: 5001
+
 ## Getting Started
 
 All important features and requisites are defined [in the documentation website](https://docs-einer.vercel.app/pt/bem-vindo).
