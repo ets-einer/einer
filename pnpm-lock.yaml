@@ -51,12 +51,16 @@ importers:
       tsconfig-paths: 4.1.1
       typescript: 4.9.4
 
-  apps/common-web:
+  apps/web-template:
     specifiers:
+      '@tanstack/react-query': ^4.20.4
+      '@trpc/client': 10.0.0-rc.5
+      '@trpc/server': 10.0.0-rc.5
       '@types/react': ^18.0.24
       '@types/react-dom': ^18.0.8
       '@vitejs/plugin-react': ^2.2.0
       autoprefixer: ^10.4.13
+      fsr: workspace:*
       postcss: ^8.4.20
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -67,6 +71,10 @@ importers:
       ui: workspace:*
       vite: ^3.2.3
     dependencies:
+      '@tanstack/react-query': 4.20.4_biqbaboplfbrettd7655fr4n2y
+      '@trpc/client': 10.0.0-rc.5_@trpc+server@10.0.0-rc.5
+      '@trpc/server': 10.0.0-rc.5
+      fsr: link:../../packages/fsr
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-router-dom: 6.6.1_biqbaboplfbrettd7655fr4n2y
@@ -101,6 +109,19 @@ importers:
       eslint-plugin-react: 7.31.8_eslint@7.32.0
     devDependencies:
       typescript: 4.9.4
+
+  packages/fsr:
+    specifiers:
+      '@types/react': ^18.0.26
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      react-router-dom: ^6.6.1
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router-dom: 6.6.1_biqbaboplfbrettd7655fr4n2y
+    devDependencies:
+      '@types/react': 18.0.26
 
   packages/tsconfig:
     specifiers: {}
@@ -632,6 +653,42 @@ packages:
 
   /@rushstack/eslint-patch/1.2.0:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
+    dev: false
+
+  /@tanstack/query-core/4.20.4:
+    resolution: {integrity: sha512-lhLtGVNJDsJ/DyZXrLzekDEywQqRVykgBqTmkv0La32a/RleILXy6JMLBb7UmS3QCatg/F/0N9/5b0i5j6IKcA==}
+    dev: false
+
+  /@tanstack/react-query/4.20.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-SJRxx13k/csb9lXAJfycgVA1N/yU/h3bvRNWP0+aHMfMjmbyX82FdoAcckDBbOdEyAupvb0byelNHNeypCFSyA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 4.20.4
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
+    dev: false
+
+  /@trpc/client/10.0.0-rc.5_@trpc+server@10.0.0-rc.5:
+    resolution: {integrity: sha512-+wVbec1UYCk4L3Z8XihkmOjeHN36HE+Ur4uKVR1DlA/9yUlxC2j/YIuhLN0mMiqGezVsMWNE/vCckVWAiRGN5w==}
+    deprecated: Use ^10.0.0-rc.6
+    peerDependencies:
+      '@trpc/server': 10.0.0-rc.5
+    dependencies:
+      '@trpc/server': 10.0.0-rc.5
+    dev: false
+
+  /@trpc/server/10.0.0-rc.5:
+    resolution: {integrity: sha512-SMj1uFL1iocYDCkLFrjyiRCAQFFA6uu7kWhIZGpWFGcZMl805CVuliWdbYcHbGU0diF/BlEAJ5BWZsfjnOkDXA==}
+    deprecated: Use ^10.0.0-rc.6
     dev: false
 
   /@tsconfig/node10/1.0.9:
@@ -3658,6 +3715,14 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
+
+  /use-sync-external-store/1.2.0_react@18.2.0:
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
