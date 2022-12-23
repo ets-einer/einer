@@ -3,7 +3,7 @@ import { createClient } from "redis";
 
 export const redis = createClient({
   url:
-    process.env.AUTH_SERVER_REDIS_URL ||
+    process.env.DATABASE_REDIS_URL ||
     "redis://:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81@127.0.0.1:6379",
 });
 

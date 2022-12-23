@@ -15,7 +15,7 @@
   "globalEnv": [
     "DATABASE_URL",
     "AUTH_SERVICE_PORT",
-    "AUTH_SERVER_REDIS_URL",
+    "DATABASE_REDIS_URL",
     "VITE_AUTH",
     "BORUM_SERVER_PORT",
     "VITE_BORUM",
