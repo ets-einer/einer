@@ -11,7 +11,7 @@ const config = ({ mode }) => {
   return defineConfig({
     server: {
       //@ts-ignore
-      port: process.env.VITE_WEB_TEMPLATE_PORT,
+      port: process.env.VITE_WEB_COMMON_PORT,
       strictPort: true,
     },
     plugins: [react()],

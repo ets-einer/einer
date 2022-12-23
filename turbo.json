@@ -13,17 +13,10 @@
     }
   },
   "globalEnv": [
-    "DATABASE_URL",
-    "AUTH_SERVICE_PORT",
+    "SERVICE_AUTH_PORT",
     "DATABASE_REDIS_URL",
-    "VITE_AUTH",
-    "BORUM_SERVER_PORT",
-    "VITE_BORUM",
-    "PLANNER_SERVER_PORT",
-    "VITE_PLANNER",
-    "VSDIA_SERVER_PORT",
-    "VITE_VSDIA",
-    "S3_PORT"
+    "VITE_WEB_TEMPLATE_PORT",
+    "VITE_WEB_COMMON_PORT"
   ],
   "globalDependencies": [
     ".env"
