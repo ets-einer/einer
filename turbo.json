@@ -16,7 +16,8 @@
     "SERVICE_AUTH_PORT",
     "DATABASE_REDIS_URL",
     "VITE_WEB_TEMPLATE_PORT",
-    "VITE_WEB_COMMON_PORT"
+    "VITE_WEB_COMMON_PORT",
+    "VITE_SERVICE_AUTH_URL"
   ],
   "globalDependencies": [
     ".env"
