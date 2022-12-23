@@ -8,7 +8,7 @@ const config = ({ mode }) => {
   return defineConfig({
     server: {
       //@ts-ignore
-      port: process.env.VITE_VSDIA,
+      port: process.env.VITE_AUTH,
       strictPort: true
     },
     plugins: [react()],
