@@ -5,33 +5,35 @@ import crypto from "crypto";
 import { redis } from "@src/lib/redis";
 import { authenticate, authenticateMicroserviceCall } from "./lib/middleware";
 import type { Request, Response } from "express";
-import bcrypt from 'bcrypt'
+import bcrypt from "bcrypt";
 import { User } from "@prisma/client";
 import { exclude } from "./lib/util";
 
 const router = Router();
 
 const SALT_ROUNDS = 10;
+const SESSION_MAX_AGE = 1000 * 60 * 60 * 24;
+
+export const sessionValueSchema = z.object({
+  userId: z.string(),
+  createdAt: z.number(),
+});
 
 router.get("/me", [authenticate], (req: Request, res: Response) => {
-  return res
-    .status(200)
-    .json({
-      message: "User retrieved successfully",
-      user: exclude(req.user as User, ["passwordHash"]),
-    });
+  return res.status(200).json({
+    message: "User retrieved successfully",
+    user: exclude(req.user as User, ["passwordHash"]),
+  });
 });
 
 router.post(
   "/ms/me",
   [authenticateMicroserviceCall],
   (req: Request, res: Response) => {
-    return res
-      .status(200)
-      .json({
-        message: "User retrieved successfully",
-        user: exclude(req.user as User, ["passwordHash"]),
-      });
+    return res.status(200).json({
+      message: "User retrieved successfully",
+      user: exclude(req.user as User, ["passwordHash"]),
+    });
   }
 );
 
@@ -128,11 +130,17 @@ router.post("/signin", async (req, res) => {
   const sessionId = crypto.randomBytes(16).toString("hex");
 
   try {
-    await redis.set(sessionId, user.id);
+    await redis.set(
+      sessionId,
+      JSON.stringify(
+        sessionValueSchema.parse({ userId: user.id, createdAt: Date.now() })
+      )
+    );
     res.cookie("sessionId", sessionId, {
       httpOnly: true,
-      maxAge: 1000 * 60 * 30,
+      maxAge: SESSION_MAX_AGE,
       signed: false,
+      sameSite: "lax",
     });
     return res
       .status(200)
