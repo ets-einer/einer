@@ -8,12 +8,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-21T22:49:39.040Z",
-    "modified": "2022-12-21T22:57:10.459Z",
+    "modified": "2022-12-23T19:09:06.575Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"john@doe.com\",\n  \"password\": \"johndoe\"\n}",
+      "raw": "{\n  \"email\": \"zamudo@gmail.com\",\n  \"password\": \"123\"\n}",
       "form": []
     },
     "tests": []
@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-12-21T23:02:53.784Z",
-    "modified": "2022-12-21T23:03:03.092Z",
+    "modified": "2022-12-23T19:07:49.028Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"john@doe.com\",\n  \"password\": \"johndoe\"\n}",
+      "raw": "{\n  \"email\": \"zamudo@gmail.com\",\n  \"password\": \"123\"\n}",
       "form": []
     },
     "tests": []

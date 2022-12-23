@@ -1,4 +1,3 @@
-import { logger } from "../logger";
 import type { Request, Response, NextFunction } from "express";
 import { z } from "zod";
 import { prisma } from "./prisma";
@@ -22,8 +21,6 @@ export const authenticateMicroserviceCall = async (
   }
 
   const { sessionId } = sessionCookie;
-
-  logger.log(sessionId);
 
   try {
     const userId = await redis.get(sessionId);
@@ -69,8 +66,6 @@ export const authenticate = async (
   }
 
   const { sessionId } = sessionCookie;
-
-  logger.log(sessionId);
 
   try {
     const userId = await redis.get(sessionId);
