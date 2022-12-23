@@ -7,9 +7,9 @@ import crypto from "crypto";
 import cookieParser from "cookie-parser";
 import { redis } from "@src/lib/redis";
 import { authenticate, authenticateMicroserviceCall } from "./lib/authenticate";
-import type { Request, Response, NextFunction } from "express";
+import type { Request, Response } from "express";
 
-const AUTH_PORT = process.env.AUTH_SERVICE_PORT || 4000;
+const AUTH_PORT = process.env.AUTH_SERVICE_PORT || 5000;
 
 const app = express();
 
