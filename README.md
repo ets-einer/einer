@@ -38,23 +38,46 @@
 - Planner: Manage, visualize and collaborate on all your projects using only one tool for everyone.
 - VsDiA Web: Easily develop and build a VsDiA together with your co-workers in one place by using a realtime collaborative tool for mapping processes.
 
-## Ports
+## Development
 
-- ### Convention
-  - Vite front-end services: 3000
-  - Back-end services: 4000
-  - Other Services: 5000
-  - Databases: ...
-- ### Actual ports
-  - Vite Auth (Login): 3000
-  - Vite Borum: 3001
-  - Vite Planner: 3002
-  - Vite VSDIA: 3003
-  - Server Borum: 4001
-  - Server Planner: 4002
-  - Server VSDIA: 4003
-  - Authentication Service: 5000
-  - S3 Service: 5001
+### Roadmap
+
+All progress tracking will be made in [ClickUp](https://clickup.com/)
+
+### Docs
+
+<a href="https://docs-einer.vercel.app/pt/bem-vindo">Project's Documentation</a>
+
+### Aplications Ports
+
+We decided to define our convetion in the following way:
+- Web Apps (vite): 3000
+- Web App services: 4000
+- Common Services: 5000
+- Databases: 6000
+- Others: 7000
+
+So for all our applications the port mapping is:
+
+| App | Port |
+| ----------- | ----------- |
+| Web Common | 3000 |
+| Web Borum | 3001 |
+| Web Planner | 3002 |
+| Web VSDIA | 3003 |
+
+
+| Services | Port |
+| ----------- | ----------- |
+| Service Borum | 4001 |
+| Service Planner | 4002 |
+| Service VSDIA | 4003 |
+| Service Authentication | 5000 |
+| Service S3 (File Storage) | 5001 |
+
+| Databases | Port |
+| ----------- | ----------- |
+| Authentication Redis | 6000 |
 
 ## Getting Started
 
@@ -90,10 +113,6 @@ $ pnpm run dev
 ### Is it any good?
 
 [yes.](https://news.ycombinator.com/item?id=3067434)
-
-## Roadmap
-
-All progress tracking will be made in [ClickUp](https://clickup.com/)
 
 ## Contributing
 
