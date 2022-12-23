@@ -13,7 +13,9 @@ type PreservedRoutesType = {
     '404'?: React.ElementType
 }
 
+//@ts-ignore
 const ROUTES = import.meta.glob("/src/pages/**/[a-z[]*.tsx")
+//@ts-ignore
 const PRESERVED: RoutesType = import.meta.glob('/src/pages/404.tsx', { eager: true })
 
 export const routes = Object.keys(ROUTES).map((route) => {
