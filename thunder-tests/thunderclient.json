@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "461ba026-de4d-48e6-b9ce-dce7727a6e34",
+    "colId": "1a6d32e0-0801-459b-8f1f-e0a276ef2020",
+    "containerId": "",
+    "name": "SignIn",
+    "url": "/signin",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-12-21T22:49:39.040Z",
+    "modified": "2022-12-21T22:57:10.459Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"john@doe.com\",\n  \"password\": \"johndoe\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "cfabb273-2138-457f-a49d-8f4ba4975be4",
+    "colId": "1a6d32e0-0801-459b-8f1f-e0a276ef2020",
+    "containerId": "",
+    "name": "SignUp",
+    "url": "/signup",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-12-21T23:02:53.784Z",
+    "modified": "2022-12-21T23:03:03.092Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"john@doe.com\",\n  \"password\": \"johndoe\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f11b6ae9-3fd1-4819-bcf6-c75a4bcb4e83",
+    "colId": "1a6d32e0-0801-459b-8f1f-e0a276ef2020",
+    "containerId": "",
+    "name": "Me",
+    "url": "/me",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-12-21T23:03:47.249Z",
+    "modified": "2022-12-21T23:45:35.528Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

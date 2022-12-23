@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "1a6d32e0-0801-459b-8f1f-e0a276ef2020",
+    "colName": "Einer Auth API",
+    "created": "2022-12-21T22:49:23.551Z",
+    "sortNum": 10000,
+    "folders": [],
+    "settings": {
+      "headers": [],
+      "tests": [],
+      "options": {
+        "baseUrl": "http://localhost:5000"
+      }
+    }
+  }
+]
