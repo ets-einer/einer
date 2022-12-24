@@ -1,3 +1,4 @@
+import { sessionValueSchema } from "@src/router";
 import type { Request, Response, NextFunction } from "express";
 import { z } from "zod";
 import { prisma } from "./prisma";
@@ -23,7 +24,16 @@ export const authenticateMicroserviceCall = async (
   const { sessionId } = sessionCookie;
 
   try {
-    const userId = await redis.get(sessionId);
+    const sessionValue = await redis.get(sessionId);
+
+    if (!sessionValue)
+      return res
+        .status(404)
+        .json({ message: "User identifier from your session does not exists" });
+
+    const { userId, createdAt } = sessionValueSchema.parse(
+      JSON.parse(sessionValue)
+    );
 
     if (!userId)
       return res
@@ -68,7 +78,16 @@ export const authenticate = async (
   const { sessionId } = sessionCookie;
 
   try {
-    const userId = await redis.get(sessionId);
+    const sessionValue = await redis.get(sessionId);
+
+    if (!sessionValue)
+      return res
+        .status(404)
+        .json({ message: "User identifier from your session does not exists" });
+
+    const { userId, createdAt } = sessionValueSchema.parse(
+      JSON.parse(sessionValue)
+    );
 
     if (!userId)
       return res
