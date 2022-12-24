@@ -1,8 +1,19 @@
-import { Link } from "fsr";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { Button } from "ui";
+
+const signOut = ({ email, password }: { email: string, password: string }) => (
+  fetch(`${import.meta.env.VITE_SERVICE_AUTH_URL}/signin`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Credentials": "true",
+    },
+    body: JSON.stringify({ email, password }),
+    credentials: "include",
+  }).then((res) => res.json())
+)
 
 export default function SignInPage() {
   const [email, setEmail] = useState("");
@@ -12,19 +23,10 @@ export default function SignInPage() {
 
   const { mutate } = useMutation(
     ["signIn"],
-    () =>
-      fetch(`${import.meta.env.VITE_SERVICE_AUTH_URL}/signin`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": "true",
-        },
-        body: JSON.stringify({ email, password: pwd }),
-        credentials: "include",
-      }).then((res) => res.json()),
+    signOut,
     {
       onSuccess: (res) => {
-        console.log(res);
+        // TODO: Notify user
         const callBackUrl = searchParams.get("callbackUrl");
         if (callBackUrl) {
           window.location.href = callBackUrl;
@@ -32,13 +34,16 @@ export default function SignInPage() {
           navigate("/");
         }
       },
-      onError: (err) => alert(JSON.stringify(err, null, 2)),
+      onError: (err) => {
+        // TODO: Notify user (beautifully)
+        alert(JSON.stringify(err, null, 2))
+      },
     }
   );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    mutate();
+    mutate({ email, password: pwd });
   };
 
   return (
