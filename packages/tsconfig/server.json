@@ -1,0 +1,17 @@
+{
+    "extends": "./base.json",
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES2016",
+        "baseUrl": ".",
+        "paths": {
+            "@src/*": ["./src/*"]
+        },
+        "typeRoots": [
+            "./src/@types",
+            "./node_modules/@types"
+        ],
+        "outDir": "./dist"
+    }
+}
