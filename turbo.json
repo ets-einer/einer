@@ -18,7 +18,8 @@
     "VITE_SERVICE_AUTH_URL",
     "VITE_WEB_TEMPLATE_PORT",
     "VITE_WEB_COMMON_PORT",
-    "VITE_WEB_COMMON_URL"
+    "VITE_WEB_COMMON_URL",
+    "SERVICE_SERVER_TEMPLATE_PORT"
   ],
   "globalDependencies": [
     ".env"

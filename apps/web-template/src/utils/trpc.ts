@@ -1,12 +1,22 @@
 import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
+import superjson from "superjson";
+
 
 // config this when you start using tRPC
-// import type { AppRouter } from "../path/to/server/trpc"; // import AppRoter type from server
+import type { AppRouter } from "../../../server-template/src/server"; // import AppRoter type from server
 
-// const client = createTRPCProxyClient<AppRouter>({
-//   links: [
-//     httpBatchLink({
-//       url: "http://localhost:3000/trpc", // trpc server url
-//     }),
-//   ],
-// });
+export const trpc = createTRPCProxyClient<AppRouter>({
+  transformer: superjson,
+  links: [
+    httpBatchLink({
+      url: "http://localhost:3999/trpc", // trpc server url,
+      fetch(url, options) {
+        return fetch(url, {
+          ...options,
+          credentials: 'include',
+        });
+      },
+    }),
+  ],
+});
+ 
