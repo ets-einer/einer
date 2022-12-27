@@ -80,4 +80,6 @@ router.post('/upload/image', upload.single('file'), async (req, res) => {
     return res.status(200).json({ file });
 })
 
-export default { router };
+const imageRouter = { router };
+
+export default imageRouter;
