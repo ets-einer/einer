@@ -7,6 +7,7 @@ import authRouter from "./router";
 const AUTH_PORT = process.env.SERVICE_AUTH_PORT || 5000;
 const ALLOWED_ORIGINS: string[] = [
   process.env.VITE_WEB_COMMON_URL || "http://localhost:3000", // Web Common
+  "http://localhost:3999",
 ];
 
 const app = express();

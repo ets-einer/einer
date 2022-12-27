@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { CookieOptions, Router } from "express";
 import { z } from "zod";
 import { prisma } from "./lib/prisma";
 import crypto from "crypto";
@@ -12,7 +12,13 @@ import { exclude } from "./lib/util";
 const router = Router();
 
 const SALT_ROUNDS = 10;
-const SESSION_MAX_AGE = 1000 * 60 * 60 * 24;
+const SESSION_COOKIE_MAX_AGE = 1000 * 60 * 60 * 24;
+const SESSION_COOKIE_OPTS: CookieOptions = {
+  httpOnly: true,
+  maxAge: SESSION_COOKIE_MAX_AGE,
+  signed: false,
+  sameSite: "lax",
+};
 
 export const sessionValueSchema = z.object({
   userId: z.string(),
@@ -52,15 +58,16 @@ router.post("/signout", async (req: Request, res: Response) => {
 
   const { sessionId } = sessionCookie;
 
-  res.clearCookie(sessionId);
+  res.clearCookie("sessionId");
 
   try {
     await redis.del(sessionId);
-    return res.status(200).json({ message: "Sign out succesfully" });
+    return res.status(200).json({ message: "Sign out succesfully" }).end();
   } catch (error) {
     return res
       .status(500)
-      .json({ message: "Could not delete session from redis", error });
+      .json({ message: "Could not delete session from redis", error })
+      .end();
   }
 });
 
@@ -136,12 +143,7 @@ router.post("/signin", async (req, res) => {
         sessionValueSchema.parse({ userId: user.id, createdAt: Date.now() })
       )
     );
-    res.cookie("sessionId", sessionId, {
-      httpOnly: true,
-      maxAge: SESSION_MAX_AGE,
-      signed: false,
-      sameSite: "lax",
-    });
+    res.cookie("sessionId", sessionId, SESSION_COOKIE_OPTS);
     return res
       .status(200)
       .json({ message: "User session created succesfully" });

@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "_scripts": {
+  "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -16,6 +16,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
+    "superjson": "^1.12.1",
     "ui": "workspace:*"
   },
   "devDependencies": {
