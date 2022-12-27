@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-  session:
+  session_db:
     image: redis:latest
     restart: always
     ports:
