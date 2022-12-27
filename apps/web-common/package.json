@@ -1,5 +1,5 @@
 {
-  "name": "common-web",
+  "name": "web-common",
   "private": true,
   "version": "0.0.0",
   "type": "module",

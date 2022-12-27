@@ -19,7 +19,7 @@ function HomePage() {
 
   return (
     <div className="bg-indigo-900 flex flex-col justify-center items-center h-screen text-white gap-3">
-      <h1 className="text-3xl font-bold">Common Web Home</h1>
+      <h1 className="text-3xl font-bold">Web Common Home</h1>
       <p>{JSON.stringify(data, null, 2)}</p>
 
       <div className="flex gap-4">
