@@ -1,0 +1,15 @@
+FROM node:latest
+
+RUN npm i -g pnpm
+
+WORKDIR /einer
+
+COPY . .
+
+RUN pnpm i
+
+RUN cd
+
+EXPOSE 2999-7999
+
+CMD [ "sleep", "infinity" ]
