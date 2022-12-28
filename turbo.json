@@ -30,7 +30,7 @@
     "SERVICE_SERVER_TEMPLATE_PORT",
     "SERVICE_S3_PORT",
     "VITE_SERVICE_S3_URL",
-    "VITE_TEST_S3_SDK_PORT"
+    "VITE_MOCK_PORT"
   ],
   "globalDependencies": [
     ".env"
