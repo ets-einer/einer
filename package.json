@@ -4,13 +4,15 @@
   "private": true,
   "workspaces": [
     "apps/*",
+    "tests/*",
     "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "mock": "turbo run mock"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

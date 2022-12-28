@@ -1,3 +1,7 @@
 {
-    "extends": "tsconfig/server.json"   
+    "extends": "tsconfig/server.json",
+    "compilerOptions": {
+        "declarationMap": false,
+        "declaration": false
+    }
 }
