@@ -15,6 +15,9 @@
     },
     "dev": {
       "cache": false
+    },
+    "mock": {
+      "cache": true
     }
   },
   "globalEnv": [
