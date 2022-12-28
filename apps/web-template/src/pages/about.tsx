@@ -1,14 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "fsr";
-import { trpc } from '../utils/trpc'
+import { Spinner } from "ui";
+import { trpc } from "../utils/trpc";
 
 export default function AboutPage() {
-  const helloQuery = useQuery(['protectedHello'], async () => (
-    await trpc.example.protectedHello.query({
-      number: 40
-    })
-  ))
-  
+  const helloQuery = useQuery(
+    ["protectedHello"],
+    async () =>
+      await trpc.example.protectedHello.query({
+        number: 40,
+      })
+  );
+
   return (
     <div className="bg-slate-900 flex flex-col justify-center items-center h-screen text-white gap-3">
       <div className="font-bold">Nothing here lmao</div>
@@ -23,7 +26,24 @@ export default function AboutPage() {
       <Link to="/">
         <p className="underline">Get back to Home Page</p>
       </Link>
-      {JSON.stringify(helloQuery.data, null, 2)}
+      <div>
+        {helloQuery.status === "success" ? (
+          JSON.stringify(helloQuery.data, null, 2)
+        ) : (
+          <p>
+            Not sign in. Click{" "}
+            <a
+              className="text-blue-500 underline font-bold"
+              target="_blank"
+              rel="noreferrer noopener"
+              href="http://localhost:3000"
+            >
+              here
+            </a>{" "}
+            to sign in
+          </p>
+        )}
+      </div>
     </div>
   );
 }
