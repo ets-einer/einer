@@ -1,5 +1,5 @@
 {
-  "name": "vite-mock",
+  "name": "mock-s3-sdk",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,8 +11,7 @@
   "dependencies": {
     "ets-s3-sdk": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vite-mock": "link:"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
