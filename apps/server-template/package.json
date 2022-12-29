@@ -5,7 +5,8 @@
   "main": "index.js",
   "_scripts": {
     "dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "prisma generate"
   },
   "keywords": [],
   "author": "",
