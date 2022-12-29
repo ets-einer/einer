@@ -28,6 +28,7 @@ importers:
       redis: ^4.5.1
       ts-node: ^10.9.1
       ts-node-dev: ^2.0.0
+      tsconfig: workspace:*
       tsconfig-paths: ^4.1.1
       typescript: ^4.9.4
       zod: ^3.20.2
@@ -48,6 +49,7 @@ importers:
       '@types/express': 4.17.15
       '@types/node': 18.11.17
       ts-node-dev: 2.0.0_moeqx3xmzxqxagf2sz6mqkbb7m
+      tsconfig: link:../../packages/tsconfig
       tsconfig-paths: 4.1.1
       typescript: 4.9.4
 
@@ -104,7 +106,10 @@ importers:
       express: ^4.18.2
       prisma: ^4.8.0
       superjson: ^1.12.1
+      ts-node: ^10.9.1
       ts-node-dev: ^2.0.0
+      tsconfig: workspace:*
+      tsconfig-paths: ^4.1.1
       typescript: ^4.9.4
       zod: ^3.20.2
     dependencies:
@@ -115,6 +120,7 @@ importers:
       cors: 2.8.5
       express: 4.18.2
       superjson: 1.12.1
+      ts-node: 10.9.1_moeqx3xmzxqxagf2sz6mqkbb7m
       zod: 3.20.2
     devDependencies:
       '@types/cookie-parser': 1.4.3
@@ -123,6 +129,8 @@ importers:
       '@types/node': 18.11.17
       prisma: 4.8.0
       ts-node-dev: 2.0.0_moeqx3xmzxqxagf2sz6mqkbb7m
+      tsconfig: link:../../packages/tsconfig
+      tsconfig-paths: 4.1.1
       typescript: 4.9.4
 
   apps/web-common:
