@@ -9,6 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "prisma generate"
   },
+  "prisma": {
+    "seed": "ts-node -r tsconfig-paths/register prisma/seed.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
