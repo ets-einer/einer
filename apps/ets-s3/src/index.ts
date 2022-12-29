@@ -2,7 +2,7 @@ import { logger } from "./logger";
 import { checkPublicDir } from "./util";
 import express from "express";
 import cors from "cors";
-import cookieParser from 'cookie-parser';
+import cookieParser from "cookie-parser";
 import imageRouter from "./routers/image";
 
 const S3_PORT = process.env.SERVICE_S3_PORT || 5001;
@@ -13,9 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-        "http://localhost:7001"
-    ],
+    origin: [process.env.VITE_MOCK_URL || "http://localhost:7001"],
     methods: "*",
     credentials: true,
   })

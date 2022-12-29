@@ -16,6 +16,7 @@ services:
     restart: always
     ports:
       - 127.0.0.1:3000:3000
+      - 127.0.0.1:7001:7001
       - 5000:5000
       - 5001:5001
     environment:

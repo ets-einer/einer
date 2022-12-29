@@ -36,7 +36,7 @@ export default function AboutPage() {
               className="text-blue-500 underline font-bold"
               target="_blank"
               rel="noreferrer noopener"
-              href="http://localhost:3000"
+              href={import.meta.env.VITE_WEB_COMMON_URL || "http://localhost:3000"}
             >
               here
             </a>{" "}
