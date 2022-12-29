@@ -5,7 +5,9 @@
   "main": "index.js",
   "_scripts": {
     "dev": "ts-node-dev --respawn --transpile-only --exit-child -r tsconfig-paths/register src/index.ts",
-    "start": "ts-node -r tsconfig-paths/register src/index.ts"
+    "start": "ts-node -r tsconfig-paths/register src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "prisma generate"
   },
   "keywords": [],
   "author": "",

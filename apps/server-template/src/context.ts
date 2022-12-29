@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from ".prisma/client";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import { inferAsyncReturnType } from "@trpc/server";
 import axios, { AxiosError } from "axios";

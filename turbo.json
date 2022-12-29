@@ -17,7 +17,10 @@
       "cache": false
     },
     "mock": {
-      "cache": true
+      "cache": false
+    },
+    "generate": {
+      "cache": false
     }
   },
   "globalEnv": [
@@ -26,12 +29,15 @@
     "DATABASE_REDIS_URL",
     "VITE_SERVICE_AUTH_URL",
     "VITE_WEB_TEMPLATE_PORT",
+    "VITE_WEB_TEMPLATE_URL",
     "VITE_WEB_COMMON_PORT",
     "VITE_WEB_COMMON_URL",
     "SERVICE_SERVER_TEMPLATE_PORT",
+    "SERVICE_SERVER_TEMPLATE_URL",
     "SERVICE_S3_PORT",
     "VITE_SERVICE_S3_URL",
-    "VITE_MOCK_PORT"
+    "VITE_MOCK_PORT",
+    "VITE_MOCK_URL"
   ],
   "globalDependencies": [
     ".env"

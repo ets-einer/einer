@@ -3,6 +3,7 @@ import sharp from "sharp";
 import { upload, prisma } from "../util";
 import process from "process";
 import path from "path";
+import { AuthMiddleware } from "../auth";
 
 const router = Router();
 
@@ -40,7 +41,7 @@ function validateAndParseMeta(meta: any): ParseMetaResult {
   }
 }
 
-router.post("/upload/image", upload.single("file"), async (req, res) => {
+router.post("/upload/image", AuthMiddleware, upload.single("file"), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ err: "No file sent" });
   }

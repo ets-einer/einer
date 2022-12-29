@@ -1,6 +1,6 @@
 import fs from 'fs';
 import multer from 'multer';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '.prisma/client';
 
 export function checkPublicDir() {
     fs.access('./public', (error) => {

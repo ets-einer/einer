@@ -31,18 +31,10 @@ export class ImageClient {
     this.uploadUrl = `${url}/upload/image`;
   }
 
-  private getFormData(object: any) {
-    const formData = new FormData();
-    Object.keys(object).forEach((key) => formData.append(key, object[key]));
-    return formData;
-  }
-
   async upload(opts: UploadImageParams, headers?: any): Promise<UploadImageOk | UploadImageErr> {
-    const data = this.getFormData(opts);
-
     try {
-        const res = await axios.post(this.uploadUrl, data, {
-          headers: { "Content-Type": "multipart/form-data", ...headers },
+        const res = await axios.postForm(this.uploadUrl, opts, {
+          headers, withCredentials: true
         });
 
         return { ok: true, file: res.data.file }

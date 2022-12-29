@@ -19,6 +19,7 @@ function S3ClientMock() {
         window.open(URL + res.file.path, '_blank')?.focus();
       } else {
         alert("ERROR " + res.err);
+        console.error(res.err)
       }
     }
   };

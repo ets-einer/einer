@@ -14,7 +14,7 @@ const app = express();
 app.use(
   cors({
     // origin: ALLOWED_ORIGINS,    // ALL ORIGINS ARE ALLOWED
-    origin: ["http://localhost:2999"],
+    origin: [process.env.VITE_WEB_TEMPLATE_URL || "http://localhost:2999"],
     methods: "*",
     credentials: true,
   })
