@@ -8,8 +8,4 @@ COPY . .
 
 RUN pnpm i
 
-RUN cd
-
-EXPOSE 2999-7999
-
 CMD [ "sleep", "infinity" ]

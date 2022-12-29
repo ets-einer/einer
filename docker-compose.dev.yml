@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-  session_db:
+  session-db:
     image: redis:latest
     restart: always
     ports:
@@ -9,14 +9,21 @@ services:
     volumes:
       - db:/var/lib/redis
 
-  einer_dev:
-    depends_on:
-      - session_db
+  einer-dev:
     build:
       context: ./
       dockerfile: dockerfile.dev
     restart: always
-    network_mode: "host" # use this only for dev envs (security issues)
+    ports:
+      - 3000:3000
+      - 5000:5000
+      - 5001:5001
+    environment:
+      - DATABASE_REDIS_URL=redis://:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81@session-db:6000
+    depends_on:
+      - session-db
+    links:
+      - session-db
     volumes:
       - ./:/einer
 
