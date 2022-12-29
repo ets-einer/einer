@@ -10,6 +10,7 @@ const config = ({ mode }) => {
 
   return defineConfig({
     server: {
+      host: true,
       //@ts-ignore
       port: process.env.VITE_MOCK_PORT,
       strictPort: true,
