@@ -21,6 +21,7 @@
     }
   },
   "globalEnv": [
+    "ON_DOCKER",
     "SERVICE_AUTH_PORT",
     "DATABASE_REDIS_URL",
     "VITE_SERVICE_AUTH_URL",

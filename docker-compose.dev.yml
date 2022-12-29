@@ -15,10 +15,11 @@ services:
       dockerfile: dockerfile.dev
     restart: always
     ports:
-      - 3000:3000
+      - 127.0.0.1:3000:3000
       - 5000:5000
       - 5001:5001
     environment:
+      - ON_DOCKER=true
       - DATABASE_REDIS_URL=redis://:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81@session-db:6000
     depends_on:
       - session-db
