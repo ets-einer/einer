@@ -33,6 +33,9 @@ yarn-error.log*
 # turbo
 .turbo
 
+# pnpm
+.pnpm-store
+
 
 vite.config.ts.*
 

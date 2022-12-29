@@ -10,6 +10,7 @@ const config = ({ mode }) => {
 
   return defineConfig({
     server: {
+      host: process.env.ON_DOCKER ? true : false,
       //@ts-ignore
       port: process.env.VITE_MOCK_PORT,
       strictPort: true,
