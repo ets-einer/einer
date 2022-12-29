@@ -25,6 +25,7 @@ type UploadImageErr = {
 }
 
 export class ImageClient {
+  private DEFAULT_HEADERS = { "Content-Type": "multipart/form-data", "credentials": "include" }
   private uploadUrl: string;
 
   constructor(url: string) {
@@ -42,7 +43,7 @@ export class ImageClient {
 
     try {
         const res = await axios.post(this.uploadUrl, data, {
-          headers: { "Content-Type": "multipart/form-data", ...headers },
+          headers: { ...this.DEFAULT_HEADERS, ...headers },
         });
 
         return { ok: true, file: res.data.file }
