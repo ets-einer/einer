@@ -1,12 +1,11 @@
 import { CookieOptions, Router } from "express";
 import { z } from "zod";
-import { prisma } from "./lib/prisma";
+import { prisma, User } from "./lib/prisma";
 import crypto from "crypto";
 import { redis } from "@src/lib/redis";
 import { authenticate, authenticateMicroserviceCall } from "./lib/middleware";
 import type { Request, Response } from "express";
 import bcrypt from "bcrypt";
-import { User } from "@prisma/client";
 import { exclude } from "./lib/util";
 
 const router = Router();
