@@ -25,7 +25,6 @@ type UploadImageErr = {
 }
 
 export class ImageClient {
-  private DEFAULT_HEADERS = { "credentials": "include" }
   private uploadUrl: string;
 
   constructor(url: string) {
@@ -35,7 +34,7 @@ export class ImageClient {
   async upload(opts: UploadImageParams, headers?: any): Promise<UploadImageOk | UploadImageErr> {
     try {
         const res = await axios.postForm(this.uploadUrl, opts, {
-          headers: { ...this.DEFAULT_HEADERS, ...headers },
+          headers, withCredentials: true
         });
 
         return { ok: true, file: res.data.file }
