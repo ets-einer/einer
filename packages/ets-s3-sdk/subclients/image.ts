@@ -25,24 +25,16 @@ type UploadImageErr = {
 }
 
 export class ImageClient {
-  private DEFAULT_HEADERS = { "Content-Type": "multipart/form-data", "credentials": "include" }
+  private DEFAULT_HEADERS = { "credentials": "include" }
   private uploadUrl: string;
 
   constructor(url: string) {
     this.uploadUrl = `${url}/upload/image`;
   }
 
-  private getFormData(object: any) {
-    const formData = new FormData();
-    Object.keys(object).forEach((key) => formData.append(key, object[key]));
-    return formData;
-  }
-
   async upload(opts: UploadImageParams, headers?: any): Promise<UploadImageOk | UploadImageErr> {
-    const data = this.getFormData(opts);
-
     try {
-        const res = await axios.post(this.uploadUrl, data, {
+        const res = await axios.postForm(this.uploadUrl, opts, {
           headers: { ...this.DEFAULT_HEADERS, ...headers },
         });
 
