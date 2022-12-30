@@ -21,6 +21,9 @@ model User {
   id           String   @id @default(cuid())
   email        String
   passwordHash String
+  sector       String?
+  edv          String
+  avatarUrl    String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
