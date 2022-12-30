@@ -3,12 +3,18 @@
 
 generator client {
   provider = "prisma-client-js"
-  output = "../node_modules/.prisma/client"
+  output   = "../node_modules/.prisma/client"
 }
 
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model Permission {
+  id    Int    @id
+  name  String
+  users User[] @relation(name: "user_permissions")
 }
 
 model User {
@@ -17,4 +23,6 @@ model User {
   passwordHash String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+
+  permissions Permission[] @relation(name: "user_permissions")
 }
