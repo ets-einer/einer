@@ -23,6 +23,8 @@ async function runSeed() {
     data: {
       email: "zamudo@gmail.com",
       passwordHash: await hashPassword("123"),
+      edv: "12345678",
+      sector: "Cap/ETS",
       permissions: {
         connect: {
           id: permissionUser.id,
@@ -34,6 +36,7 @@ async function runSeed() {
   const userCelso = await prisma.user.create({
     data: {
       email: "celso@gmail.com",
+      edv: "87654321",
       passwordHash: await hashPassword("celso"),
       permissions: {
         connect: {
