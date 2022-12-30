@@ -136,13 +136,13 @@ $ git clone https://github.com/ets-einer/einer
 $ cd einer
 
 # Build the images using the docker-compose.dev.yml file
-$ docker-compose -f docker-compose.dev.yml up --build -d
+$ docker compose -f docker-compose.dev.yml up -d
 
-# Make sure einer-einer_dev-1 is running
-$ docker ps # list all running containers, see if you find einer-einer_dev-1
+# Make sure einer-einer-dev-1 is running
+$ docker ps # list all running containers, see if you find einer-einer-dev-1
 
 # Enter inside your docker using bash
-$ docker exec -it einer-einer_dev-1 bash
+$ docker exec -it einer-einer-dev-1 bash
 
 # If you need the Auth Microservice:
 $ cd apps/auth
