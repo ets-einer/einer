@@ -8,6 +8,9 @@
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
     "generate": "prisma generate"
   },
+  "prisma": {
+    "seed": "ts-node -r tsconfig-paths/register prisma/seed.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
