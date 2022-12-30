@@ -3,7 +3,7 @@ import { z } from "zod";
 import { prisma, User } from "./lib/prisma";
 import crypto from "crypto";
 import { redis } from "@src/lib/redis";
-import { authenticate, authenticateMicroserviceCall } from "./lib/middleware";
+import { authenticate } from "./lib/middleware";
 import type { Request, Response } from "express";
 import { exclude } from "./lib/util";
 import { comparePassword, hashPassword } from "./lib/hash";
@@ -30,16 +30,12 @@ router.get("/me", [authenticate], (req: Request, res: Response) => {
   });
 });
 
-router.post(
-  "/ms/me",
-  [authenticateMicroserviceCall],
-  (req: Request, res: Response) => {
-    return res.status(200).json({
-      message: "User retrieved successfully",
-      user: exclude(req.user as User, ["passwordHash"]),
-    });
-  }
-);
+router.post("/ms/me", [authenticate], (req: Request, res: Response) => {
+  return res.status(200).json({
+    message: "User retrieved successfully",
+    user: exclude(req.user as User, ["passwordHash"]),
+  });
+});
 
 router.post("/signout", async (req: Request, res: Response) => {
   let sessionCookie = undefined;
