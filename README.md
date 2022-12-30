@@ -110,15 +110,11 @@ $ cd einer
 # Install all dependencies
 $ pnpm install
 
-# If you need the Auth Microservice:
-$ cd apps/auth
-$ pnpm prisma db push # pushes the prisma model to SQLite
-$ pnpm prisma generate # generates the client
+# Push all database migrations
+$ pnpm db-push
 
-# If you need the S3 Microservice:
-$ cd apps/ets-s3
-$ pnpm prisma db push # pushes the prisma model to SQLite
-$ pnpm prisma generate # generates the client
+# Setup prisma orm client
+$ pnpm generate
 
 # Run the dev script
 $ pnpm run dev
@@ -143,16 +139,6 @@ $ docker ps # list all running containers, see if you find einer-einer-dev-1
 
 # Enter inside your docker using bash
 $ docker exec -it einer-einer-dev-1 bash
-
-# If you need the Auth Microservice:
-$ cd apps/auth
-$ pnpm prisma db push # pushes the prisma model to SQLite
-$ pnpm prisma generate # generates the client
-
-# If you need the S3 Microservice:
-$ cd apps/ets-s3
-$ pnpm prisma db push # pushes the prisma model to SQLite
-$ pnpm prisma generate # generates the client
 
 # Run the dev script
 $ pnpm run dev
