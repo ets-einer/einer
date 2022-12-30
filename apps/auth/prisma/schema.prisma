@@ -19,10 +19,10 @@ model Permission {
 
 model User {
   id           String   @id @default(cuid())
-  email        String
+  email        String   @unique
   passwordHash String
   sector       String?
-  edv          String
+  edv          String   @unique
   avatarUrl    String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt

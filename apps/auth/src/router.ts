@@ -1,6 +1,6 @@
 import { CookieOptions, Router } from "express";
 import { z } from "zod";
-import { prisma, User } from "./lib/prisma";
+import { prisma, User, Prisma } from "./lib/prisma";
 import crypto from "crypto";
 import { redis } from "@src/lib/redis";
 import { authenticate } from "./lib/middleware";
@@ -72,6 +72,7 @@ router.post("/signup", async (req, res) => {
       .object({
         email: z.string().email(),
         password: z.string(),
+        edv: z.string().regex(/^\d+$/).transform(Number).transform(String), // converts string into number then converts back to string to validate if string is numeric
       })
       .parse(req.body);
   } catch (error) {
@@ -80,16 +81,7 @@ router.post("/signup", async (req, res) => {
       .json({ message: "Body not formatted correctly", error });
   }
 
-  const { email, password } = signUpBody;
-
-  const user = await prisma.user.findFirst({
-    where: { email },
-  });
-
-  if (user)
-    return res
-      .status(400)
-      .json({ message: "User with that email already exists" });
+  const { email, password, edv } = signUpBody;
 
   const hashedPassword = await hashPassword(password);
 
@@ -98,6 +90,7 @@ router.post("/signup", async (req, res) => {
       data: {
         email,
         passwordHash: hashedPassword,
+        edv,
         permissions: {
           connectOrCreate: {
             create: {
@@ -118,9 +111,17 @@ router.post("/signup", async (req, res) => {
       .status(200)
       .json({ message: "User created", user: exclude(user, ["passwordHash"]) });
   } catch (error) {
+    let details: string | undefined = undefined;
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      if (error.code === "P2002") {
+        if (error.meta && error.meta.target)
+          details = `User with ${error.meta.target} already exists`;
+        else details = `User already exists`;
+      }
+    }
     return res
       .status(500)
-      .json({ message: "User could not be created", error });
+      .json({ message: "User could not be created", details, error });
   }
 });
 
