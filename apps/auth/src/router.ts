@@ -5,12 +5,11 @@ import crypto from "crypto";
 import { redis } from "@src/lib/redis";
 import { authenticate, authenticateMicroserviceCall } from "./lib/middleware";
 import type { Request, Response } from "express";
-import bcrypt from "bcrypt";
 import { exclude } from "./lib/util";
+import { comparePassword, hashPassword } from "./lib/hash";
 
 const router = Router();
 
-const SALT_ROUNDS = 10;
 const SESSION_COOKIE_MAX_AGE = 1000 * 60 * 60 * 24;
 const SESSION_COOKIE_OPTS: CookieOptions = {
   httpOnly: true,
@@ -96,7 +95,7 @@ router.post("/signup", async (req, res) => {
       .status(400)
       .json({ message: "User with that email already exists" });
 
-  const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+  const hashedPassword = await hashPassword(password);
 
   try {
     const user = await prisma.user.create({
@@ -130,7 +129,7 @@ router.post("/signin", async (req, res) => {
   if (!user)
     return res.status(404).json({ message: "This user does not exists" });
 
-  if (!(await bcrypt.compare(password, user.passwordHash)))
+  if (!(await comparePassword(password, user.passwordHash)))
     return res.status(404).json({ message: "Email or password wrong" });
 
   const sessionId = crypto.randomBytes(16).toString("hex");
