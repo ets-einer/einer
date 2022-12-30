@@ -107,7 +107,10 @@ $ git clone https://github.com/ets-einer/einer
 # Go into the repository
 $ cd einer
 
-# Install all dependencies
+# Copy the .env.dev file into .dev
+$ cp .env.dev .env
+
+# Install all necessary deps
 $ pnpm install
 
 # Push all database migrations
@@ -121,6 +124,8 @@ $ pnpm run dev
 ```
 
 #### Docker
+
+One of the benefits of docker is that you can run anywhere.
 
 Make sure you have docker and docker-compose installed on your machine, then you can follow these steps:
 
@@ -139,6 +144,18 @@ $ docker ps # list all running containers, see if you find einer-einer-dev-1
 
 # Enter inside your docker using bash
 $ docker exec -it einer-einer-dev-1 bash
+
+# Copy the .env.dev file into .dev
+$ cp .env.dev .env
+
+# Install all necessary deps
+$ pnpm install
+
+# Push all database migrations
+$ pnpm db-push
+
+# Setup prisma orm client
+$ pnpm generate
 
 # Run the dev script
 $ pnpm run dev

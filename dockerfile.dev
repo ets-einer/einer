@@ -4,14 +4,4 @@ RUN npm i -g pnpm
 
 WORKDIR /einer
 
-COPY . .
-
-RUN cp .env.dev .env
-
-RUN pnpm i
-
-RUN pnpm db-push
-
-RUN pnpm generate
-
 CMD [ "sleep", "infinity" ]
