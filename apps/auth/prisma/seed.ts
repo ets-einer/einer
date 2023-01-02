@@ -3,16 +3,16 @@ import { prisma } from "@src/lib/prisma";
 
 async function runSeed() {
   await prisma.user.deleteMany();
-  await prisma.permission.deleteMany();
+  await prisma.role.deleteMany();
 
-  const permissionUser = await prisma.permission.create({
+  const roleUser = await prisma.role.create({
     data: {
       id: 0,
       name: "USER",
     },
   });
 
-  const permissionAdmin = await prisma.permission.create({
+  const roleAdmin = await prisma.role.create({
     data: {
       id: 1,
       name: "ADMIN",
@@ -25,9 +25,9 @@ async function runSeed() {
       passwordHash: await hashPassword("123"),
       edv: "12345678",
       sector: "Cap/ETS",
-      permissions: {
+      role: {
         connect: {
-          id: permissionUser.id,
+          id: roleUser.id,
         },
       },
     },
@@ -38,9 +38,9 @@ async function runSeed() {
       email: "celso@gmail.com",
       edv: "87654321",
       passwordHash: await hashPassword("celso"),
-      permissions: {
+      role: {
         connect: {
-          id: permissionUser.id,
+          id: roleUser.id,
         },
       },
     },
@@ -51,9 +51,9 @@ async function runSeed() {
       id: userCelso.id,
     },
     data: {
-      permissions: {
+      role: {
         connect: {
-          id: permissionAdmin.id,
+          id: roleAdmin.id,
         },
       },
     },

@@ -11,10 +11,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Permission {
+model Role {
   id    Int    @id
   name  String
-  users User[] @relation(name: "user_permissions")
+  users User[] @relation(name: "user_role")
 }
 
 model User {
@@ -26,6 +26,6 @@ model User {
   avatarUrl    String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-
-  permissions Permission[] @relation(name: "user_permissions")
+  roleId       Int
+  role         Role     @relation(name: "user_role", fields: [roleId], references: [id])
 }

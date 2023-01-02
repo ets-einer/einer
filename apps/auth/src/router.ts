@@ -91,7 +91,7 @@ router.post("/signup", async (req, res) => {
         email,
         passwordHash: hashedPassword,
         edv,
-        permissions: {
+        role: {
           connectOrCreate: {
             create: {
               id: 0,
@@ -104,7 +104,7 @@ router.post("/signup", async (req, res) => {
         },
       },
       include: {
-        permissions: {},
+        role: {},
       },
     });
     return res

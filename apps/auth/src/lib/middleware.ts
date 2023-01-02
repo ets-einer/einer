@@ -47,7 +47,7 @@ export const authenticate = async (
         id: userId,
       },
       include: {
-        permissions: {
+        role: {
           select: {
             name: true,
           },
