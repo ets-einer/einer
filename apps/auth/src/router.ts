@@ -94,11 +94,10 @@ router.post("/signup", async (req, res) => {
         role: {
           connectOrCreate: {
             create: {
-              id: 0,
               name: "USER",
             },
             where: {
-              id: 0,
+              name: "USER",
             },
           },
         },

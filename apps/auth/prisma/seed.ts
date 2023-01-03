@@ -5,16 +5,14 @@ async function runSeed() {
   await prisma.user.deleteMany();
   await prisma.role.deleteMany();
 
-  const roleUser = await prisma.role.create({
+  await prisma.role.create({
     data: {
-      id: 0,
       name: "USER",
     },
   });
 
-  const roleAdmin = await prisma.role.create({
+  await prisma.role.create({
     data: {
-      id: 1,
       name: "ADMIN",
     },
   });
@@ -27,7 +25,7 @@ async function runSeed() {
       sector: "Cap/ETS",
       role: {
         connect: {
-          id: roleUser.id,
+          name: "USER",
         },
       },
     },
@@ -40,20 +38,7 @@ async function runSeed() {
       passwordHash: await hashPassword("celso"),
       role: {
         connect: {
-          id: roleUser.id,
-        },
-      },
-    },
-  });
-
-  await prisma.user.update({
-    where: {
-      id: userCelso.id,
-    },
-    data: {
-      role: {
-        connect: {
-          id: roleAdmin.id,
+          name: "ADMIN",
         },
       },
     },

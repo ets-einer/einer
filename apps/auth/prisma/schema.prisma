@@ -12,8 +12,7 @@ datasource db {
 }
 
 model Role {
-  id    Int    @id
-  name  String
+  name  String @id
   users User[] @relation(name: "user_role")
 }
 
@@ -26,6 +25,6 @@ model User {
   avatarUrl    String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-  roleId       Int
-  role         Role     @relation(name: "user_role", fields: [roleId], references: [id])
+  roleName     String
+  role         Role     @relation(name: "user_role", fields: [roleName], references: [name])
 }
