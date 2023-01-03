@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-12-21T23:02:53.784Z",
-    "modified": "2022-12-23T19:07:49.028Z",
+    "modified": "2022-12-30T19:42:43.040Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"zamudo@gmail.com\",\n  \"password\": \"123\"\n}",
+      "raw": "{\n  \"email\": \"eba@gmail.com\",\n  \"edv\": \"1233333\",\n  \"password\": \"321\"\n}",
       "form": []
     },
     "tests": []
