@@ -4,8 +4,4 @@ RUN npm i -g pnpm
 
 WORKDIR /einer
 
-COPY . .
-
-RUN pnpm i
-
 CMD [ "sleep", "infinity" ]

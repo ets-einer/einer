@@ -1,10 +1,8 @@
-import { PrismaClient } from ".prisma/client";
+import { prisma } from "../prisma/prisma"
 import * as trpcExpress from "@trpc/server/adapters/express";
 import { inferAsyncReturnType } from "@trpc/server";
 import axios, { AxiosError } from "axios";
 import type { User } from "./../../auth/src/lib/prisma";
-
-const prisma = new PrismaClient();
 
 const authUrl = `${process.env.VITE_SERVICE_AUTH_URL}/ms/me`;
 

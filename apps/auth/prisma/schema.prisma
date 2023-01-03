@@ -3,7 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output = "../node_modules/.prisma/client"
+  output   = "../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -11,10 +11,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Role {
+  name  String @id
+  users User[] @relation(name: "user_role")
+}
+
 model User {
   id           String   @id @default(cuid())
-  email        String
+  email        String   @unique
   passwordHash String
+  sector       String?
+  edv          String   @unique
+  avatarUrl    String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+  roleName     String
+  role         Role     @relation(name: "user_role", fields: [roleName], references: [name])
 }

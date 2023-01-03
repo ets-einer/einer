@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
-    "generate": "prisma generate"
+    "generate": "prisma generate",
+    "db-push": "prisma db push"
   },
   "keywords": [],
   "author": "",
