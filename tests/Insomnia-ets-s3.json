@@ -1,0 +1,201 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-01-03T18:50:28.904Z",
+  "__export_source": "insomnia.desktop.app:v2022.5.1",
+  "resources": [
+    {
+      "_id": "req_8918574b92a545f8be8a79b65973ea95",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1672771420254,
+      "created": 1672771235258,
+      "url": "http://localhost:5001/retrieve/file/c0e09714-1586-4505-81ef-778e4ce8d7b6",
+      "name": "Download file",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1672771235258,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "parentId": null,
+      "modified": 1663031793735,
+      "created": 1663031793735,
+      "name": "New Document",
+      "description": "",
+      "scope": "design",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_ba55401ba40b43098b0b9155cc6fa5b8",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1672771758261,
+      "created": 1672771141984,
+      "url": "http://localhost:5000/signup",
+      "name": "Create account",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"zamudo@gmail.com\",\n\t\"password\": \"12345678\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_69c6c3f084f84abb8c72522698c9d265"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1672771141984,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_3bc6c65143ae4b5782f091beb1693588",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1672771393741,
+      "created": 1672771071001,
+      "url": "http://localhost:5000/signin",
+      "name": "Login",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"zamudo@gmail.com\",\n\t\"password\": \"123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_53a66541c85e4430ab720c963ec2fa0c"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1672771071001,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f57f708bb44946b299cfa57066d76510",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1672771375338,
+      "created": 1666475392951,
+      "url": "http://localhost:5001/upload/file",
+      "name": "Upload file",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "id": "pair_2407f26f20a94e07bb6ae42a31baabda",
+            "name": "file",
+            "value": "",
+            "description": "",
+            "type": "file",
+            "fileName": "/home/viktormp/Downloads/video.mp4"
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data",
+          "id": "pair_c0d2a1f31b3f4668b7c31a5684d2df68"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1666475392951,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_4db518aad3f569c84d8286ee314595de54434054",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1663031793753,
+      "created": 1663031793753,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1663031793753,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_4db518aad3f569c84d8286ee314595de54434054",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1672771394742,
+      "created": 1663031793757,
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "key": "sessionId",
+          "value": "03d2f6e9452713aae61a557e526f2d9a",
+          "expires": "2023-01-04T18:43:14.000Z",
+          "maxAge": 86400,
+          "domain": "localhost",
+          "path": "/",
+          "httpOnly": true,
+          "extensions": ["SameSite=Lax"],
+          "hostOnly": true,
+          "creation": "2023-01-03T18:43:14.736Z",
+          "lastAccessed": "2023-01-03T18:43:14.736Z",
+          "id": "6205662910000638"
+        }
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_041e147b06d04fbcb7831d31ce93981a",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1672771021518,
+      "created": 1663031793748,
+      "fileName": "ets-s3",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "uts_defcadef9dde45228aef497b91fb9f4b",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1663031793762,
+      "created": 1663031793762,
+      "name": "Example Test Suite",
+      "_type": "unit_test_suite"
+    }
+  ]
+}
