@@ -19,6 +19,7 @@ export function Sidebar() {
   const menus = [
     { name: "Home", link: "/" },
     { name: "S3 Client Usage Mock", link: "/mocks/s3-client-mock" },
+    { name: "S3 Client File Mock", link: "/mocks/s3-client-file-mock" },
     { name: "Auth", link: "/mocks/auth-client-mock" },
   ];
 
