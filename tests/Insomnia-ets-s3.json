@@ -1,9 +1,42 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2023-01-03T18:50:28.904Z",
+  "__export_date": "2023-01-04T01:54:18.595Z",
   "__export_source": "insomnia.desktop.app:v2022.5.1",
   "resources": [
+    {
+      "_id": "req_3f4f557092ad41cda72744159e14919d",
+      "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "modified": 1672797080311,
+      "created": 1672796995843,
+      "url": "http://localhost:5001/admin/files",
+      "name": "Get all files (ADMIN)",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1672796995843,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_541994bc97cc43c69c13cd07b5b33651",
+      "parentId": null,
+      "modified": 1663031793735,
+      "created": 1663031793735,
+      "name": "New Document",
+      "description": "",
+      "scope": "design",
+      "_type": "workspace"
+    },
     {
       "_id": "req_8918574b92a545f8be8a79b65973ea95",
       "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
@@ -28,19 +61,9 @@
       "_type": "request"
     },
     {
-      "_id": "wrk_541994bc97cc43c69c13cd07b5b33651",
-      "parentId": null,
-      "modified": 1663031793735,
-      "created": 1663031793735,
-      "name": "New Document",
-      "description": "",
-      "scope": "design",
-      "_type": "workspace"
-    },
-    {
       "_id": "req_ba55401ba40b43098b0b9155cc6fa5b8",
       "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
-      "modified": 1672771758261,
+      "modified": 1672797235724,
       "created": 1672771141984,
       "url": "http://localhost:5000/signup",
       "name": "Create account",
@@ -48,7 +71,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"email\": \"zamudo@gmail.com\",\n\t\"password\": \"12345678\"\n}"
+        "text": "{\n\t\"email\": \"zamudo@gmail.com\",\n\t\"edv\": \"123143141\",\n\t\"password\": \"12345678\"\n}"
       },
       "parameters": [],
       "headers": [
@@ -72,7 +95,7 @@
     {
       "_id": "req_3bc6c65143ae4b5782f091beb1693588",
       "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
-      "modified": 1672771393741,
+      "modified": 1672797234210,
       "created": 1672771071001,
       "url": "http://localhost:5000/signin",
       "name": "Login",
@@ -80,7 +103,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"email\": \"zamudo@gmail.com\",\n\t\"password\": \"123\"\n}"
+        "text": "{\n\t\"email\": \"celso@gmail.com\",\n\t\"password\": \"celso\"\n}"
       },
       "parameters": [],
       "headers": [
@@ -158,14 +181,14 @@
     {
       "_id": "jar_4db518aad3f569c84d8286ee314595de54434054",
       "parentId": "wrk_541994bc97cc43c69c13cd07b5b33651",
-      "modified": 1672771394742,
+      "modified": 1672797202440,
       "created": 1663031793757,
       "name": "Default Jar",
       "cookies": [
         {
           "key": "sessionId",
-          "value": "03d2f6e9452713aae61a557e526f2d9a",
-          "expires": "2023-01-04T18:43:14.000Z",
+          "value": "a14c7b7892f200a03c9822c56c39958d",
+          "expires": "2023-01-05T01:53:22.000Z",
           "maxAge": 86400,
           "domain": "localhost",
           "path": "/",
@@ -173,8 +196,8 @@
           "extensions": ["SameSite=Lax"],
           "hostOnly": true,
           "creation": "2023-01-03T18:43:14.736Z",
-          "lastAccessed": "2023-01-03T18:43:14.736Z",
-          "id": "6205662910000638"
+          "lastAccessed": "2023-01-04T01:53:22.440Z",
+          "id": "8910681335370694"
         }
       ],
       "_type": "cookie_jar"
