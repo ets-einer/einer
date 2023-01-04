@@ -67,7 +67,7 @@ router.post("/upload/image", AuthMiddleware, upload.single("file"), async (req, 
   const ref = `${timestamp}-${originalname.split(".")[0]}.webp`;
 
   await sharp(buffer)
-    .webp({ quality: options.quality || 40 })
+    .webp({ quality: Number(options.quality) || 40 })
     .toFile(path.resolve(process.cwd() + "/public/images/" + ref));
 
   const imgPath = `/images/${ref}`;
