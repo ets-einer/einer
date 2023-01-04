@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-type FileFromS3 = {
+export type FileFromS3 = {
     id: string
     type: string
     path: string
