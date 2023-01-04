@@ -31,7 +31,7 @@ function validateOptions(options: ImageUploadOptions) {
   return null;
 }
 
-function validateAndParseMeta(meta: any): ParseMetaResult {
+export function validateAndParseMeta(meta: any): ParseMetaResult {
   try {
     const result: ParseMetaOk = { ok: true, meta: JSON.parse(meta) };
     return result;

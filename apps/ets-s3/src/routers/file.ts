@@ -5,6 +5,7 @@ import zlib from "zlib";
 import fs from "fs";
 import path from "path";
 import process from "process";
+import { validateAndParseMeta } from "./image";
 
 const router = Router();
 
@@ -21,6 +22,16 @@ router.post("/upload/file", AuthMiddleware, upload.single("file"), async (req, r
     return res.status(400).json({ err: errorMessages.noFileSent });
   }
 
+  let meta: string | null = null;
+  if (req.body.meta) {
+    const result = validateAndParseMeta(req.body.meta);
+    if (result.ok) {
+      meta = result.meta;
+    } else {
+      return res.status(400).json({ err: result.err });
+    }
+  }
+
   const file = zlib.deflateSync(req.file.buffer);
   const mimeType = req.file.mimetype;
 
@@ -30,6 +41,7 @@ router.post("/upload/file", AuthMiddleware, upload.single("file"), async (req, r
     data: {
       path: filePath,
       type: mimeType,
+      meta
     },
   });
 
