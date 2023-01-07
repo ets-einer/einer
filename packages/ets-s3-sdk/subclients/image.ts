@@ -1,10 +1,11 @@
 import axios, { AxiosError } from "axios";
+import { stringifyIfExists } from "./file";
 
-export type FileFromS3 = {
+export type FileFromS3<MetaType = any> = {
     id: string
     type: string
     path: string
-    meta?: string
+    meta?: MetaType
     createdAt: Date
 }
 
@@ -33,7 +34,7 @@ export class ImageClient {
 
   async upload(opts: UploadImageParams, headers?: any): Promise<UploadImageOk | UploadImageErr> {
     try {
-        const res = await axios.postForm(this.uploadUrl, opts, {
+        const res = await axios.postForm(this.uploadUrl, {...opts, meta: stringifyIfExists(opts.meta)}, {
           headers, withCredentials: true
         });
 
