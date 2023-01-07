@@ -10,7 +10,7 @@
     "db-push": "prisma db push"
   },
   "prisma": {
-    "seed": "tsx --clear-screen=false prisma/seed.ts"
+    "seed": "tsx prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
