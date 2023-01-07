@@ -13,7 +13,7 @@ function S3ClientMock() {
 
     const upload = async () => {
         if (file) {
-            const res = await s3.file.upload({ file });
+            const res = await s3.file.upload({ file, meta: { dono: "Celso" } });
 
             if (res.ok) {
                 alert(res.file.id);
