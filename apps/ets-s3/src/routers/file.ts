@@ -5,9 +5,10 @@ import zlib from "zlib";
 import fs from "fs";
 import path from "path";
 import process from "process";
-import { validateAndParseMeta } from "./image";
 
 const router = Router();
+
+const S3_URL = process.env.VITE_SERVICE_S3_URL;
 
 const errorMessages = {
   noFileFound: "No file with given Id found",
@@ -22,15 +23,7 @@ router.post("/upload/file", AuthMiddleware, upload.single("file"), async (req, r
     return res.status(400).json({ err: errorMessages.noFileSent });
   }
 
-  let meta: string | null = null;
-  if (req.body.meta) {
-    const result = validateAndParseMeta(req.body.meta);
-    if (result.ok) {
-      meta = result.meta;
-    } else {
-      return res.status(400).json({ err: result.err });
-    }
-  }
+  let meta: string | null = req.body.meta;
 
   const file = zlib.deflateSync(req.file.buffer);
   const mimeType = req.file.mimetype;
@@ -63,6 +56,25 @@ router.get("/retrieve/file/:id", AuthMiddleware, async (req, res) => {
     return res.status(404).json({ err: errorMessages.noFileFound, sentId: id });
   }
 
+  res.status(200).json({
+    file,
+    downloadUrl: `${S3_URL}/download/file/${file.id}`
+  })
+});
+
+router.get('/download/file/:id', AuthMiddleware, async (req, res) => {
+  const id = req.params.id;
+
+  const file = await prisma.file.findFirst({
+    where: {
+      id,
+    },
+  });
+
+  if (!file) {
+    return res.status(404).json({ err: errorMessages.noFileFound, sentId: id });
+  }
+
   if (file.type == "image") {
     return res.status(400).json({
       err: errorMessages.tryingToDecompressStaticImage,
@@ -81,15 +93,15 @@ router.get("/retrieve/file/:id", AuthMiddleware, async (req, res) => {
 
   const fileName = noStampFileName.join('');
 
-  const decompressedFile = zlib.inflateSync(fileBuffer);
-
   res
     .status(200)
     .set("Content-Type", file.type)
+    .set("Content-Description", "File Transfer")
     .set("Content-disposition", "attachment;filename=" + fileName)
-    .set("Content-Length", decompressedFile.length.toString())
-    .send(decompressedFile);
-});
+    .set("Content-Length", fileBuffer.length.toString())
+    .set("Content-Encoding", "deflate")
+    .send(fileBuffer);
+})
 
 const fileRouter = { router };
 
