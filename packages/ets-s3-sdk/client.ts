@@ -1,5 +1,4 @@
-import { ImageClient } from './subclients';
-import { FileClient } from './subclients/file';
+import { ImageClient, FileClient } from './subclients';
 
 type S3ClientConfig = {
     url: string
@@ -18,7 +17,7 @@ export class S3Client {
 
 }
 
-
+export * from './subclients';
 // function MockFile({ name = 'file.txt', size = 1024, type = 'plain/txt', lastModified = new Date() }) {
 //     const blob = new Blob(['a'.repeat(size)], { type });
     
