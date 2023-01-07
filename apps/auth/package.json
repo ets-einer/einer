@@ -9,6 +9,9 @@
     "generate": "prisma generate",
     "db-push": "prisma db push"
   },
+  "prisma": {
+    "seed": "ts-node -r tsconfig-paths/register prisma/seed.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
