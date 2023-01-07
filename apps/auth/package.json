@@ -10,7 +10,7 @@
     "db-push": "prisma db push"
   },
   "prisma": {
-    "seed": "ts-node -r tsconfig-paths/register prisma/seed.ts"
+    "seed": "tsx --clear-screen=false prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
