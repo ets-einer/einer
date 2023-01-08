@@ -8,7 +8,7 @@ import process from "process";
 
 const router = Router();
 
-const S3_URL = process.env.VITE_SERVICE_S3_URL;
+const S3_URL = process.env.VITE_SERVICE_S3_URL || "http://localhost:5001";
 
 const errorMessages = {
   noFileFound: "No file with given Id found",
