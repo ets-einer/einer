@@ -72,6 +72,7 @@ importers:
       ts-node-dev: ^2.0.0
       tsconfig: workspace:*
       typescript: ^4.9.4
+      utils: workspace:*
     dependencies:
       '@prisma/client': 4.8.0_prisma@4.8.0
       axios: 1.2.1
@@ -80,6 +81,7 @@ importers:
       express: 4.18.2
       multer: 1.4.5-lts.1
       sharp: 0.31.3
+      utils: link:../../packages/utils
     devDependencies:
       '@types/cookie-parser': 1.4.3
       '@types/cors': 2.8.13
@@ -283,6 +285,9 @@ importers:
       tailwindcss: 3.2.4_postcss@8.4.20
       tsconfig: link:../tsconfig
       typescript: 4.9.4
+
+  packages/utils:
+    specifiers: {}
 
   tests/web-mock:
     specifiers:
