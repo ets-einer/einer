@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsx --clear-screen=false src/index.ts",
+    "start": "tsx src/index.ts",
     "dev": "tsx watch --clear-screen=false src/index.ts",
     "generate": "prisma generate",
     "db-push": "prisma db push"
