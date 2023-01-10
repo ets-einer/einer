@@ -1,5 +1,6 @@
 ---
 title: Introdução
+sidebar_position: 0
 ---
 
 **Bem-vindo à documentação do nosso TCC!**

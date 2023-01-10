@@ -1,5 +1,6 @@
 ---
 title: Como Documentar?
+sidebar_position: 1
 ---
 
 Nesta página estão todas as convenções e práticas que adotamos como padrão para a nossa documentação, e um tutorial de como contribuir.

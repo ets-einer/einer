@@ -1,5 +1,6 @@
 ---
 title: Git e Github
+sidebar_position: 2
 ---
 
 ## Tutoriais básicos de Git e Github:
