@@ -24,6 +24,9 @@
     },
     "db-push": {
       "cache": false
+    },
+    "docs": {
+      "cache": false
     }
   },
   "globalEnv": [
