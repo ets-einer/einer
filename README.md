@@ -9,7 +9,7 @@
 <h3 align="center">Main app's Monorepository.</h3>
 
 <h4 align="center">
-  <a href="https://docs-einer.vercel.app/pt/bem-vindo">Project's Documentation</a>
+  <!-- <a href="https://docs-einer.vercel.app/pt/bem-vindo">Project's Documentation</a> -->
 </h4>
 
 <!-- <p align="center">
@@ -46,7 +46,17 @@ All progress tracking will be made in [ClickUp](https://clickup.com/)
 
 ### Docs
 
-<a href="https://docs-einer.vercel.app/pt/bem-vindo">Project's Documentation</a>
+Docs are now in this repository inside the `docs` folder, powered by [Docusaurus](https://docusaurus.io/).
+
+To access it locally, you can run:
+
+```sh
+# certify that you are in the repository root directory
+$ pnpm run docs
+
+# If you are running the docusaurus inside a docker, run this instead
+$ pnpm run docs -- --host 0.0.0.0
+```
 
 ### Aplications Ports
 
@@ -80,8 +90,6 @@ So for all our applications the port mapping is:
 | Authentication Redis | 6000 |
 
 ## Getting Started
-
-All important features and requisites are defined [in the documentation website](https://docs-einer.vercel.app/pt/bem-vindo).
 
 ### Prerequisites
 
@@ -199,5 +207,6 @@ Inspiration, code snippets, etc.
 
 ---
 
-> [docs-einer](https://docs-einer.vercel.app/) &nbsp;&middot;&nbsp;
+<!-- > [docs-einer](<insert-new-url-here>) &nbsp;&middot;&nbsp; -->
+
 > GitHub [@ets-einer](https://github.com/ets-einer)
