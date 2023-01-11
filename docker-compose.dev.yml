@@ -15,6 +15,7 @@ services:
       dockerfile: dockerfile.dev
     restart: always
     ports:
+      - 127.0.0.1:2000:2000 # Docs
       - 127.0.0.1:2999:2999 # WEB-TEMPLATE
       - 127.0.0.1:3999:3999 # SERVER-TEMPLATE
       - 127.0.0.1:3000:3000
